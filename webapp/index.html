@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <head>
+    <!-- [START css] -->
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.css">
+    <link type="text/css" rel="stylesheet" href="/style/recipe.css">
+    <!-- [END css] -->
+
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Recipe Recommendation</a>
+          <div class="nav-collapse collapse pull-right">
+            <a href="{{ url|safe }}" class="btn">{{ url_linktext }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <!-- [START greetings] -->
+      {% for greeting in greetings %}
+      <div class="row">
+        {% if greeting.author %}
+          <b>{{ greeting.author.email }}
+            {% if user and user.user_id() == greeting.author.identity %}
+              (You)
+            {% endif %}
+          </b> wrote:
+        {% else %}
+          An anonymous person wrote:
+        {% endif %}
+        <blockquote>{{ greeting.content }}</blockquote>
+      </div>
+      {% endfor %}
+      <!-- [END greetings] -->
+
+      <form action="/enter" method="post">
+
+        <div class="form-group">
+        <label for="exampleSelect1">Please Select Your Flavor:</label>
+        <select class="form-control" name="flavor">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+        </div>
+
+        <div class="form-group">
+        <label for="exampleSelect1">Please Select Your Height:</label>
+        <select class="form-control" name="height">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <hr>
+      <p>More info coming soon</p>
+    </div>
+  </body>
+</html>
+{% endautoescape %}

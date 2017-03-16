@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <head>
+    <!-- [START css] -->
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.css">
+    <link type="text/css" rel="stylesheet" href="/style/recipe.css">
+    <!-- [END css] -->
+
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Recipe Recommendation</a>
+          <div class="nav-collapse collapse pull-right">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+
+        <p>user's flavor: {{ flavor }}</p>
+        <p>user's height: {{ height }}</p>
+
+      <hr>
+      <a href="/">Return to Main Page</a>
+    </div>
+  </body>
+</html>
+{% endautoescape %}
