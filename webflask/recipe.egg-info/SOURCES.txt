@@ -1,0 +1,11 @@
+MANIFEST.in
+recipe/__init__.py
+recipe/db.sql
+recipe/recipe.py
+recipe.egg-info/PKG-INFO
+recipe.egg-info/SOURCES.txt
+recipe.egg-info/dependency_links.txt
+recipe.egg-info/requires.txt
+recipe.egg-info/top_level.txt
+recipe/static/.DS_Store
+recipe/templates/index.html
