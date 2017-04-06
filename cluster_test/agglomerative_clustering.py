@@ -1,7 +1,8 @@
 # import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 import scipy.spatial.distance
-# import pickle 
+import pickle 
 
 from sklearn.cluster import AgglomerativeClustering
 from sklearn.metrics import pairwise_distances
@@ -11,11 +12,11 @@ labels = ('lab 1', 'lab 2')
 
 X = list()
 
-X.append([0,0,0,0,0])
-X.append([0,1,0,0,0])
-X.append([0,1,0,1,0])
-X.append([0,0,0,1,1])
-X.append([0,0,1,1,1])
+X.append([False,False,False,False,False])
+X.append([False,True,False,False,False])
+X.append([False,True,False,True,False])
+X.append([False,False,False,True,True])
+X.append([False,False,True,True,True])
 
 X = np.array(X)
 
