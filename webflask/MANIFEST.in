@@ -1,0 +1,3 @@
+graft recipe/templates
+graft recipe/static
+include recipe/db.sql
