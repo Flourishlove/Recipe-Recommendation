@@ -66,15 +66,23 @@ def show_labels():
     return render_template('index.html', entries=entries)
 
 
-"""
-@app.route('/add', methods=['POST'])
-def add_entry():
-    if not session.get('logged_in'):
-        abort(401)
+@app.route('/choose', methods=['POST'])
+def choose_flavor():
+    if request.form['action'] == 'sweet':
+        flavor = 'sweet'
+    elif request.form['action'] == 'spicy':
+        flavor = 'spicy'
+    else:
+        flavor = 'hot'
+    flash('Choose flavor successfully')
+    return redirect(url_for('show_recipes', flavor=flavor))
+
+@app.route('/show')
+def show_recipes():
+    cur_flavor = request.args.get('flavor')
+    print cur_flavor
     db = get_db()
-    db.execute('insert into entries (title, text) values (?, ?)',
-               [request.form['title'], request.form['text']])
-    db.commit()
-    flash('New entry was successfully posted')
-    return redirect(url_for('show_entries'))
-"""
+    cur = db.execute('select name from recipes where flavor = (?)', (cur_flavor,))
+    entries = cur.fetchall()
+    return render_template('content.html', entries=entries)
+
