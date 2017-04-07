@@ -16,6 +16,6 @@ X.append([0,0,1,1,1])
 
 X = np.array(X)
 
-model = DBSCAN(eps=0.3, min_samples=2, metric="hamming").fit(X)
+model = DBSCAN(eps=0.3, min_samples=3, metric="hamming").fit(X)
 
 print model.labels_

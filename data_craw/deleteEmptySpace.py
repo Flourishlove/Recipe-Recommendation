@@ -12,6 +12,8 @@ for recipeLine in recipes:
     recipeName = recipeLine[1]
     ingreList = recipeLine[2:] #list of ingredients for one recipe
     newIngreList = []
+    newIngreList.append(recipeIndex)
+    newIngreList.append(recipeName)
     for ingre in ingreList:
         # print ingre
         if ingre != '':
