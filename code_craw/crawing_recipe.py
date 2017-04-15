@@ -7,31 +7,34 @@ Created on Tue Mar 14 12:44:25 2017
 """
 
 import urllib
-from scrapy import Selector
+import re
+import pandas as pd
 
 def getHtml(url1):
     with urllib.request.urlopen(url1) as url:
-        html = url.read()
+        html = url.read().decode("utf-8")
     return html
-    
+   
 
-def parse(url,response):
-        selector = Selector(response)
-        # 在此，xpath会将所有class=topic的标签提取出来，当然这是个list
-        # 这个list里的每一个元素都是我们要找的html标签
-        content_list = selector.xpath("//*[@class='topic']")
-        # 遍历这个list，处理每一个标签
-        for content in content_list:
-            # 此处解析标签，提取出我们需要的帖子标题。
-            topic = content.xpath('string(.)').extract_first()
-            print (topic)
-            # 此处提取出帖子的url地址。
-            url = url.host + content.xpath('@href').extract_first()
-            print (url)
+#yum=yum[yum.cuisine == 'Chinese']
 
-url="http://www.yummly.co/#recipe/The-Best-Effing-Chicken-Recipe-Ever_-Seriously_-1697567"
-html = getHtml(url)
+result=[]
+i=0
+for rec in yum['id']:
+    i=i+1
+    url="http://www.yummly.co/#recipe/"+str(rec)
+    html = getHtml(url)
 
-parse(url,html)
+    imgs=re.findall('\"name\"\: \"(.*?)\",\n *?\"image\": \"(.*?)\",\n *?\"description\": \"(.*?)\"',html)
+    result.extend(imgs)
+          
+#nutrition=re.findall('\"nutrition\"\: {\(\n *?|.*\)*}',html)
+    print(i,len(imgs))
 
-#print (html)
+distinct=list(set(result))
+i=0
+recipe=[]
+for k in range(len(yum)):
+    for name in distinct:
+        if yum['recipeName'][k]==name[0]:
+            recipe.append((yum['id'][k],yum['recipeName'][k],name))
