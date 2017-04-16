@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Recipe Recommendation System</title>
 
     <!-- Bootstrap core CSS -->
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
@@ -17,8 +18,12 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/ie10-viewport-bug-workaround.css') }}">
 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
     <!-- Custom styles for this template -->
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/starter-template.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/recipe1.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/image_click7.css') }}">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -27,16 +32,15 @@
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
 
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    </script>
+</head>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
+<body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -51,30 +55,127 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="/show?flavor=spicy">Spicy</a></li>
-            <li><a href="/show?flavor=hot">Hot</a></li>
+            <li><a onclick="document.getElementById('Choose Flavor').style.display='block'" class="w3-button">Choose Flavor</a></li>
+            <li><a onclick="document.getElementById('Fill in Personal Information').style.display='block'" class="w3-button">Fill in Personal Information</a></li>
+            <li><a onclick="document.getElementById('contact').style.display='block'" class="w3-button">contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-    <div class="container">
-
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    <div class="bgimg w3-display-container w3-text-white">
+      <div class="w3-display-middle w3-jumbo">
+        <p>Health Ninja</p>
       </div>
 
-    </div><!-- /.container -->
+      <div class="w3-display-topleft w3-container w3-xlarge">
+          <p><button onclick="document.getElementById('Choose Flavor').style.display='block'" class="w3-button w3-black">Choose Flavor</button></p>
+
+      </div>
+
+      <div class="w3-display-bottomleft w3-container">
+        <p class="w3-xlarge">monday - friday 10-23 | saturday 14-02</p>
+        <p class="w3-large">Georgia Tech, Atlanta</p>
+        <p>powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+      </div>
+
+      <div class="section center center">
+            <div class="section_title" style="text-indent: 100px; font-weight: bold; color: white;">
+                <p>Choose your favorite flavor</p>
+            </div>
+            <form>
+                <div class="cc-selector">
+                    <div class="ninegrids_left"></div>
+                    <div class="ninegrids">
+                    <div class="round-button"><div class="round-button-circle"><span>Button!!</span></div></div>
+                    </div>
+                    <div class="ninegrids">
+                    <div class="round-button"><div class="round-button-circle"><span>Button!!</span></div></div>
+                    </div>
+                    <div class="ninegrids">
+                    <div class="round-button"><div class="round-button-circle"><span>Button!!</span></div></div>
+                    </div>
+
+                    <div class="ninegrids_left"></div>
+                    <div class="ninegrids">
+                    <input id="visa" type="radio" name="credit-card" value="visa" />
+                    <label class="drinkcard-cc visa" for="visa"></label>
+                    </div>
+                    <div class="ninegrids">
+                    <input id="mastercard" type="radio" name="credit-card" value="mastercard" />
+                    <label class="drinkcard-cc mastercard" for="mastercard"></label>
+                    </div>
+                    <div class="ninegrids">
+                    <input id="backtop" type="radio" name="credit-card" value="backtop" />
+                    <label class="drinkcard-cc backtop" for="backtop"></label>
+                    </div>
+
+                </div>
+            </form>
+          <div class="ninegrids_bottom"></div>
+        </div>
+    </div>
+
+<!-- Fill in Personal Information Modal -->
+<div id="Fill in Personal Information" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <span onclick="document.getElementById('Fill in Personal Information').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>
+      <div class="w3-quarter">
+      <!-- <div class="round-button"><div class="round-button-circle"><a href="http://example.com" class="round-button">Button!!</a></div></div> -->
+        <img src="{{ url_for('static', filename='height.svg') }}" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" color = "w3-text-white">
+        <h3 style="font-weight: bold">Height</h3>
+        <p></p>
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-animate-input" type="text" placeholder="Weight" style="width:30%" required name="Weight"></p>
+      </div>
+
+      <div class="w3-quarter">
+        <img src="{{ url_for('static', filename='weight.svg') }}" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+        <h3 style="font-weight: bold">Weight(kg)</h3>
+        <p></p>
+        <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-animate-input" type="text" placeholder="Weight" style="width:30%" required name="Weight"></p>
+
+      </div>
+
+      <div class="w3-quarter">
+        <img src="{{ url_for('static', filename='age.svg') }}" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+        <h3 style="font-weight: bold">Age</h3>
+        <p></p>
+        <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-animate-input" type="text" placeholder="Weight" style="width:30%" required name="Weight"></p>
+        </div>
+
+      <div class="w3-quarter">
+        <img src="{{ url_for('static', filename='meal.svg') }}" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+        <h3 style="font-weight: bold">Meal of the Day</h3>
+        <p></p>
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-animate-input" type="text" placeholder="Weight" style="width:30%" required name="Weight"></p>
+        </div>
+    </div>
+  </div>
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="{{ url_for('static', filename='js/e10-viewport-bug-workaround.js') }}"></script>
-  </body>
+<!-- Contact Modal -->
+<div id="contact" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black">
+      <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>
+      <!-- <h1>Contact</h1> -->
+    </div>
+    <div class="w3-container">
+      <p>Reserve a table, ask for today's special or just send us a message:</p>
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+        <p><button class="w3-button" type="submit">SEND MESSAGE</button></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
 </html>

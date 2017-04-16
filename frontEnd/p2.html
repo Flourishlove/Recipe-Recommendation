@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<title>Recipe Recommendation System</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<head>
+<script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+</script>
+
+<style type="text/css">
+    body,h1,h5 {font-family: "Raleway", sans-serif}
+    body, html {height: 100%}
+    .bgimg {
+        background-image: url('Img/background.jpg');
+        min-height: 100%;
+        background-size:100%;
+        background-position: center center fixed;
+        background-size: cover;
+    }
+
+    .header {
+        opacity: 0;
+        color:none;
+        padding:100px;
+        }
+
+    .section {
+         width:400px;
+         height:475px;
+         float:right;
+         background-color:rgba(0, 0, 0, 0.5);
+         padding:30px;
+         <!--border:1px solid black;-->
+        }
+
+    .section_title{
+         width:400px;
+         height:50px;
+    }
+
+    .section_title text{
+        font-family: font-family: "Raleway", sans-serif;
+        font-style:italic;
+        font-size:30px;
+        }
+
+    .ninegrids{
+        width: 100px;
+        height: 100px;
+        background: none;
+        position: relative;
+        border: 5px solid rgba(0, 0, 0, 0.0001);
+        float:left;
+        text-align: center;
+    }
+
+    .ninegrids_left{
+        width: 27px;
+        height: 100px;
+        background: none;
+        position: relative;
+        border: 5px solid rgba(0, 0, 0, 0.0001);
+        float:left;
+        text-align: center;
+    }
+
+    .ninegrids_bottom{
+        width: 27px;
+        height: 100px;
+        background: none;
+        position: relative;
+        border: 5px solid rgba(0, 0, 0, 0.0001);
+        float:left;
+        text-align: center;
+    }
+
+    .round-button-circle {
+        width: 70px;
+        height: 70px;
+        padding-bottom: 100%;
+        border-radius: 35px;
+        border:3px solid #cfdcec;
+        overflow:hidden;
+        background: #4679BD;
+        box-shadow: 0 0 3px gray;
+
+        text-align:center;
+        vertical-align:middle;
+        color:#e2eaf3;
+        font-family:Verdana;
+        font-size:0.7em;
+        font-weight:bold;
+        text-decoration:none;
+        }
+    .round-button-circle span{
+        position: absolute;
+        left: 40%;
+        top: 50%;
+        -ms-transform: translate(-10%, -10%);
+        -webkit-transform: translate(-10%, -10%);
+        transform: translate(-50%, -125%);
+    }
+
+    .round-button-circle:hover {
+        background:#30588e;
+        }
+
+    .round-button {
+        display:block;
+        float:center;
+        width:50%;
+        padding-top:20%;
+        padding-bottom:20%;
+        padding-left: 20%;
+        line-height:1em;
+        margin-top:-0.5em;
+        }
+</style>
+</head>
+
+<body>
+<div class="bgimg w3-display-container w3-text-white">
+  <div class="w3-display-middle w3-jumbo">
+    <p>Health Ninja</p>
+  </div>
+  <div class="w3-display-topleft w3-container w3-xlarge">
+      <p><button onclick="document.getElementById('Choose Flavor').style.display='block'" class="w3-button w3-black">Choose Flavor</button></p>
+    <p><button onclick="document.getElementById('Fill in Personal Information').style.display='block'" class="w3-button w3-black">Fill in Personal Information</button></p>
+    <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">contact</button></p>
+  </div>
+  <div class="w3-display-bottomleft w3-container">
+    <p class="w3-xlarge">monday - friday 10-23 | saturday 14-02</p>
+    <p class="w3-large">Georgia Tech, Atlanta</p>
+    <p>powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  </div>
+</div>
+
+<!-- Fill in Personal Information Modal -->
+<div id="Fill in Personal Information" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <span onclick="document.getElementById('Fill in Personal Information').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>
+      <div class="w3-quarter">
+      <!-- <div class="round-button"><div class="round-button-circle"><a href="http://example.com" class="round-button">Button!!</a></div></div> -->
+        <img src="Img/height.svg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity" color = "w3-text-white">
+        <h3 style="font-weight: bold">Height</h3>
+        <p></p>
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-animate-input" type="text" placeholder="Weight" style="width:30%" required name="Weight"></p>
+      </div>
+
+      <div class="w3-quarter">
+        <img src="Img/weight.svg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+        <h3 style="font-weight: bold">Weight(kg)</h3>
+        <p></p>
+        <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-animate-input" type="text" placeholder="Weight" style="width:30%" required name="Weight"></p>
+
+      </div>
+
+      <div class="w3-quarter">
+        <img src="Img/age.svg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+        <h3 style="font-weight: bold">Age</h3>
+        <p></p>
+        <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-animate-input" type="text" placeholder="Weight" style="width:30%" required name="Weight"></p>
+        </div>
+
+      <div class="w3-quarter">
+        <img src="Img/meal.svg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+        <h3 style="font-weight: bold">Meal of the Day</h3>
+        <p></p>
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-animate-input" type="text" placeholder="Weight" style="width:30%" required name="Weight"></p>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Choose Flavor Modal -->
+<div id="Choose Flavor" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <span onclick="document.getElementById('Choose Flavor').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>
+      <div class="section center center">
+            <div class="section_title" style="text-indent: 100px; font-weight: bold; color: white;">
+                <p>Choose your favorite flavor</p>
+            </div>
+            <div class="ninegrids_left"></div>
+            <div class="ninegrids">
+            <div class="round-button"><div class="round-button-circle"><span>Button!!</span></div></div>
+            </div>
+            <div class="ninegrids">
+            <div class="round-button"><div class="round-button-circle"><span>Button!!</span></div></div>
+            </div>
+            <div class="ninegrids">
+            <div class="round-button"><div class="round-button-circle"><span>Button!!</span></div></div>
+            </div>
+            <div class="ninegrids_left"></div>
+            <div class="ninegrids">
+            <div class="round-button"><div class="round-button-circle"><span>Button!!</span></div></div>
+            </div>
+            <div class="ninegrids">
+            <div class="round-button"><div class="round-button-circle"><span>Button!!</span></div></div>
+            </div>
+            <div class="ninegrids">
+            <div class="round-button"><div class="round-button-circle"><span>Button!!</span></div></div>
+            </div>
+            <div class="ninegrids_left"></div>
+            <div class="ninegrids">
+            <div class="round-button"><div class="round-button-circle"><span>Button!!</span></div></div>
+            </div>
+            <div class="ninegrids">
+            <div class="round-button"><div class="round-button-circle"><span>Button!!</span></div></div>
+            </div>
+            <div class="ninegrids">
+            <div class="round-button"><div class="round-button-circle"><span>Button!!</span></div></div>
+            </div>
+          <div class="ninegrids_bottom"></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Modal -->
+<div id="contact" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black">
+      <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>
+      <!-- <h1>Contact</h1> -->
+    </div>
+    <div class="w3-container">
+      <p>Reserve a table, ask for today's special or just send us a message:</p>
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+        <p><button class="w3-button" type="submit">SEND MESSAGE</button></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
