@@ -7,6 +7,12 @@
 .visa{background-image:url(http://i.imgur.com/lXzJ1eB.png);}
 .mastercard{background-image:url(http://i.imgur.com/SJbRQF7.png);}
 .backtop{background-image:url(/static/img/back.png);}
+.chicken{background-image:url(/static/img/chicken.jpg);}
+.pork{background-image:url(/static/img/pork.jpg);}
+.fish{background-image:url(/static/img/fish.jpg);}
+.oil{background-image:url(/static/img/oil.jpg);}
+.vegetable{background-image:url(/static/img/vegetable.jpg);}
+.salt{background-image:url(/static/img/salt.jpg);}
 
 .cc-selector input:active +.drinkcard-cc{opacity: .9;}
 .cc-selector input:checked +.drinkcard-cc{

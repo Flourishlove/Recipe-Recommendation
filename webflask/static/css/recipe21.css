@@ -14,13 +14,20 @@ body, html {height: 100%}
     padding:100px;
     }
 
+.div-center {
+  width: 50%;
+  margin: 0 auto;
+}
+
 .section {
-     width:400px;
-     height:475px;
-     float:right;
-     background-color:rgba(0, 0, 0, 0.5);
-     padding:30px;
-     <!--border:1px solid black;-->
+    margin-top: 50px;
+    position: relative;
+    width:400px;
+    height:650px;
+    float:right;
+    background-color:rgba(0, 0, 0, 0.5);
+    padding:30px;
+    <!--border:1px solid black;-->
 }
 
 .section_title{
@@ -31,7 +38,7 @@ body, html {height: 100%}
 .section_title text{
     font-family: font-family: "Raleway", sans-serif;
     font-style:italic;
-    font-size:30px;
+    font-size:40px;
     }
 
 .ninegrids{

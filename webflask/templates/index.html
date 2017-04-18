@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
     <!-- Custom styles for this template -->
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/recipe1.css') }}">
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/image_click7.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/recipe21.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/image_click8.css') }}">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -50,7 +50,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Health Ninja</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -78,39 +78,88 @@
         <p class="w3-large">Georgia Tech, Atlanta</p>
         <p>powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
       </div>
-
-      <div class="section center center">
+      <div class="section center">
             <div class="section_title" style="text-indent: 100px; font-weight: bold; color: white;">
                 <p>Choose your favorite flavor</p>
             </div>
             <form>
                 <div class="cc-selector">
+                  <div class="input-group">
                     <div class="ninegrids_left"></div>
                     <div class="ninegrids">
-                    <div class="round-button"><div class="round-button-circle"><span>Button!!</span></div></div>
-                    </div>
-                    <div class="ninegrids">
-                    <div class="round-button"><div class="round-button-circle"><span>Button!!</span></div></div>
-                    </div>
-                    <div class="ninegrids">
-                    <div class="round-button"><div class="round-button-circle"><span>Button!!</span></div></div>
-                    </div>
-
-                    <div class="ninegrids_left"></div>
-                    <div class="ninegrids">
-                    <input id="visa" type="radio" name="credit-card" value="visa" />
+                    <input id="visa" type="radio" name="flavor_choose" value="visa" />
                     <label class="drinkcard-cc visa" for="visa"></label>
                     </div>
                     <div class="ninegrids">
-                    <input id="mastercard" type="radio" name="credit-card" value="mastercard" />
+                    <input id="mastercard" type="radio" name="flavor_choose" value="mastercard" />
                     <label class="drinkcard-cc mastercard" for="mastercard"></label>
                     </div>
                     <div class="ninegrids">
-                    <input id="backtop" type="radio" name="credit-card" value="backtop" />
+                    <input id="backtop" type="radio" name="flavor_choose" value="backtop" />
                     <label class="drinkcard-cc backtop" for="backtop"></label>
                     </div>
 
+                    <div class="ninegrids_left"></div>
+                    <div class="ninegrids">
+                    <input id="chicken" type="radio" name="flavor_choose" value="chicken" />
+                    <label class="drinkcard-cc chicken" for="chicken"></label>
+                    </div>
+                    <div class="ninegrids">
+                    <input id="pork" type="radio" name="flavor_choose" value="pork" />
+                    <label class="drinkcard-cc pork" for="pork"></label>
+                    </div>
+                    <div class="ninegrids">
+                    <input id="fish" type="radio" name="flavor_choose" value="fish" />
+                    <label class="drinkcard-cc fish" for="fish"></label>
+                    </div>
+
+                    <div class="ninegrids_left"></div>
+                    <div class="ninegrids">
+                    <input id="oil" type="radio" name="flavor_choose" value="oil" />
+                    <label class="drinkcard-cc oil" for="oil"></label>
+                    </div>
+                    <div class="ninegrids">
+                    <input id="vegetable" type="radio" name="flavor_choose" value="vegetable" />
+                    <label class="drinkcard-cc vegetable" for="vegetable"></label>
+                    </div>
+                    <div class="ninegrids">
+                    <input id="salt" type="radio" name="flavor_choose" value="salt" />
+                    <label class="drinkcard-cc salt" for="salt"></label>
+                    </div>
+                  </div>
                 </div>
+
+                <div class="section_title div-center" style="text-indent: 100px; font-weight: bold; color: white;">
+                <p >Fill in Your Personal Info</p>
+                </div>
+                <p>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">@</span>
+                  <input type="text" class="form-control" placeholder="Height(cm)" aria-describedby="basic-addon1" required>
+                </div>
+                </p>
+                <p>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">@</span>
+                  <input type="text" class="form-control" placeholder="Weight(kg)" aria-describedby="basic-addon1" required>
+                </div>
+                </p>
+                <p>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">@</span>
+                  <input type="text" class="form-control" placeholder="Age" aria-describedby="basic-addon1" required>
+                </div>
+                </p>
+
+                <div class="form-group">
+                  <select class="form-control" id="sel1">
+                    <option>Male</option>
+                    <option>Female</option>
+                  </select>
+                </div>
+
+
+                <p><div class="div-center"><input class="btn btn-primary" type="submit" name="action" value="Get Recommendation" /></div></p>
             </form>
           <div class="ninegrids_bottom"></div>
         </div>
