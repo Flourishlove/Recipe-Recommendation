@@ -4,6 +4,7 @@ import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash
 from flaskext.mysql import MySQL
+import constraint
 
 from settings import APP_STATIC
 
@@ -53,19 +54,32 @@ def show_recipes():
     else:
         flavor_name = "Asian Garlic Tofu"
 
+    conn = mysql.connect()
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM recipe_info WHERE dbscan_label = %s;", [cur_flavor])
+    fetch_result = cur.fetchall()
+    entries = constraint.nutritional_constraints(fetch_result, cur_age, cur_weight, cur_height, cur_gender, 'Active')
+    print entries
+    conn.close()
+    error = None
+    return render_template('content.html', entries=entries, error=error)
+"""
     try:
         conn = mysql.connect()
         cur = conn.cursor()
-        cur.execute("SELECT name FROM recipe_info WHERE dbscan_label = %s;", [cur_flavor])
-        entries = cur.fetchall()
+        cur.execute("SELECT * FROM recipe_info WHERE dbscan_label = %s;", [cur_flavor])
+        fetch_result = cur.fetchall()
+        entries = constraint.nutritional_constraints(fetch_result, cur_age, cur_weight, cur_height, cur_gender, 'Active')
+        print entries
         conn.close()
         error = None
-        return render_template('content.html', entries=entries, flavor_name=flavor_name, error=error)
+        return render_template('content.html', entries=entries, error=error)
     except Exception as e:
         print str(e)
         entries = None
         error = 'Database Connection Error!'
         return render_template('content.html', entries=entries, error=error)
+"""
 
 
 @application.route('/', methods=['GET', 'POST'])
