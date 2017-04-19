@@ -23,7 +23,7 @@
 
     <!-- Custom styles for this template -->
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/recipe21.css') }}">
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/image_click8.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/image_click9.css') }}">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -55,7 +55,6 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a onclick="document.getElementById('Choose Flavor').style.display='block'" class="w3-button">Choose Flavor</a></li>
             <li><a onclick="document.getElementById('Fill in Personal Information').style.display='block'" class="w3-button">Fill in Personal Information</a></li>
             <li><a onclick="document.getElementById('contact').style.display='block'" class="w3-button">contact</a></li>
           </ul>
@@ -82,49 +81,49 @@
             <div class="section_title" style="text-indent: 100px; font-weight: bold; color: white;">
                 <p>Choose your favorite flavor</p>
             </div>
-            <form>
+            <form action="{{ url_for('choose_flavor') }}" method="post">
                 <div class="cc-selector">
                   <div class="input-group">
                     <div class="ninegrids_left"></div>
                     <div class="ninegrids">
-                    <input id="visa" type="radio" name="flavor_choose" value="visa" />
-                    <label class="drinkcard-cc visa" for="visa"></label>
+                    <input id="Asian_Garlic_Tofu" type="radio" name="flavor" value="0" required/>
+                    <label class="drinkcard-cc Asian_Garlic_Tofu" for="Asian_Garlic_Tofu"></label>
                     </div>
                     <div class="ninegrids">
-                    <input id="mastercard" type="radio" name="flavor_choose" value="mastercard" />
-                    <label class="drinkcard-cc mastercard" for="mastercard"></label>
+                    <input id="Mexican_Beef_Lasagna" type="radio" name="flavor" value="1" />
+                    <label class="drinkcard-cc Mexican_Beef_Lasagna" for="Mexican_Beef_Lasagna"></label>
                     </div>
                     <div class="ninegrids">
-                    <input id="backtop" type="radio" name="flavor_choose" value="backtop" />
-                    <label class="drinkcard-cc backtop" for="backtop"></label>
-                    </div>
-
-                    <div class="ninegrids_left"></div>
-                    <div class="ninegrids">
-                    <input id="chicken" type="radio" name="flavor_choose" value="chicken" />
-                    <label class="drinkcard-cc chicken" for="chicken"></label>
-                    </div>
-                    <div class="ninegrids">
-                    <input id="pork" type="radio" name="flavor_choose" value="pork" />
-                    <label class="drinkcard-cc pork" for="pork"></label>
-                    </div>
-                    <div class="ninegrids">
-                    <input id="fish" type="radio" name="flavor_choose" value="fish" />
-                    <label class="drinkcard-cc fish" for="fish"></label>
+                    <input id="Chicken_Stir-Fry_with_Noodles" type="radio" name="flavor" value="2" />
+                    <label class="drinkcard-cc Chicken_Stir-Fry_with_Noodles" for="Chicken_Stir-Fry_with_Noodles"></label>
                     </div>
 
                     <div class="ninegrids_left"></div>
                     <div class="ninegrids">
-                    <input id="oil" type="radio" name="flavor_choose" value="oil" />
-                    <label class="drinkcard-cc oil" for="oil"></label>
+                    <input id="Chicken_and_Avocado_Burritos" type="radio" name="flavor" value="3" />
+                    <label class="drinkcard-cc Chicken_and_Avocado_Burritos" for="Chicken_and_Avocado_Burritos"></label>
                     </div>
                     <div class="ninegrids">
-                    <input id="vegetable" type="radio" name="flavor_choose" value="vegetable" />
-                    <label class="drinkcard-cc vegetable" for="vegetable"></label>
+                    <input id="Southwestern_Beef_Wraps" type="radio" name="flavor" value="4" />
+                    <label class="drinkcard-cc Southwestern_Beef_Wraps" for="Southwestern_Beef_Wraps"></label>
                     </div>
                     <div class="ninegrids">
-                    <input id="salt" type="radio" name="flavor_choose" value="salt" />
-                    <label class="drinkcard-cc salt" for="salt"></label>
+                    <input id="Cuban_Style_Lamb" type="radio" name="flavor" value="5" />
+                    <label class="drinkcard-cc Cuban_Style_Lamb" for="Cuban_Style_Lamb"></label>
+                    </div>
+
+                    <div class="ninegrids_left"></div>
+                    <div class="ninegrids">
+                    <input id="Shumai_with_Crab_and_Pork" type="radio" name="flavor" value="6" />
+                    <label class="drinkcard-cc Shumai_with_Crab_and_Pork" for="Shumai_with_Crab_and_Pork"></label>
+                    </div>
+                    <div class="ninegrids">
+                    <input id="Cilantro_Lime_Chicken_Tacos" type="radio" name="flavor" value="7" />
+                    <label class="drinkcard-cc Cilantro_Lime_Chicken_Tacos" for="Cilantro_Lime_Chicken_Tacos"></label>
+                    </div>
+                    <div class="ninegrids">
+                    <input id="Slow_Cooker_Irish_Beef_Stew" type="radio" name="flavor" value="8" />
+                    <label class="drinkcard-cc Slow_Cooker_Irish_Beef_Stew" for="Slow_Cooker_Irish_Beef_Stew"></label>
                     </div>
                   </div>
                 </div>
@@ -135,24 +134,24 @@
                 <p>
                 <div class="input-group">
                   <span class="input-group-addon" id="basic-addon1">@</span>
-                  <input type="text" class="form-control" placeholder="Height(cm)" aria-describedby="basic-addon1" required>
+                  <input type="text" class="form-control" placeholder="Height(cm)" aria-describedby="basic-addon1" name="height" required>
                 </div>
                 </p>
                 <p>
                 <div class="input-group">
                   <span class="input-group-addon" id="basic-addon1">@</span>
-                  <input type="text" class="form-control" placeholder="Weight(kg)" aria-describedby="basic-addon1" required>
+                  <input type="text" class="form-control" placeholder="Weight(kg)" aria-describedby="basic-addon1" name="weight" required>
                 </div>
                 </p>
                 <p>
                 <div class="input-group">
                   <span class="input-group-addon" id="basic-addon1">@</span>
-                  <input type="text" class="form-control" placeholder="Age" aria-describedby="basic-addon1" required>
+                  <input type="text" class="form-control" placeholder="Age" aria-describedby="basic-addon1" name="age" required>
                 </div>
                 </p>
 
-                <div class="form-group">
-                  <select class="form-control" id="sel1">
+                <div class="input-group">
+                  <select class="form-control" name="gender">
                     <option>Male</option>
                     <option>Female</option>
                   </select>
