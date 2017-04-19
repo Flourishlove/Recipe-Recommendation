@@ -15,7 +15,7 @@ def EER(age, weight, height, gender, activity_level):
             PA = 1.11
         elif activity_level == 'Active':
             PA = 1.25
-        elif activity_level == 'LowActive':
+        elif activity_level == 'HighActive':
             PA = 1.48
     elif gender == 'female':
         if activity_level == 'Sedentary':
@@ -24,7 +24,7 @@ def EER(age, weight, height, gender, activity_level):
             PA = 1.12
         elif activity_level == 'Active':
             PA = 1.27
-        elif activity_level == 'LowActive':
+        elif activity_level == 'HighActive':
             PA = 1.45
     else:
         print ('error')
