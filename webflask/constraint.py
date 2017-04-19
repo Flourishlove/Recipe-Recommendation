@@ -9,6 +9,7 @@ Created on Sat Apr 15 17:14:50 2017
 
 from nurtition import *
 import numpy as np
+import ast
 
 def constraint_EER(my_nutrition, age, weight, height, gender, activity_level):
     allow = 0.3
@@ -40,11 +41,15 @@ def nutritional_constraints(yum, age, weight, height, gender, activity_level):
     for recipe in yum:
         my_nutrition=[0 for i in range(n_nutrition)]
         #print recipe[15]
-        for element in recipe[15]:
-            print element
+        #temp_list = [x.encode('UTF8') for x in recipe[15]]
+        temp_list = ast.literal_eval(recipe[15])
+        for element in temp_list:
+            # print type(element)
+            # print element
             for i in range(n_nutrition):
-                if element['attribute']== nutrition_list[i]:
+                if element['attribute'] == nutrition_list[i]:
                     my_nutrition[i] = element['value']*unit_ratio[i] #/recipe[14]
+                    print my_nutrition[i]
 
         yum_list.append([recipe[4], my_nutrition])
     N=len(yum_list)
