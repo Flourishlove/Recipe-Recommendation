@@ -29,11 +29,11 @@ mysql.init_app(application)
 @application.route('/show')
 def show_recipes():
     cur_flavor = request.args.get('flavor')
-    cur_height = float(request.args.get('height'))/100
+    cur_height = request.args.get('height')
     cur_weight = request.args.get('weight')
     cur_age = request.args.get('age')
     cur_gender = request.args.get('gender')
-    print cur_height
+    print cur_age
     #cur.execute("SELECT name FROM recipes WHERE flavor = %s;", [cur_flavor])
     if cur_flavor == 8:
         flavor_name = "Slow Cooker Irish Beef Stew"
@@ -56,14 +56,13 @@ def show_recipes():
 
     conn = mysql.connect()
     cur = conn.cursor()
-    cur.execute("SELECT num, nutrition FROM recipe_info WHERE dbscan_label = %s;", [cur_flavor])
-    fetch_result = cur.fetchall()
-    entries = constraint.nutritional_constraints(fetch_result, cur_age, cur_weight, cur_height, cur_gender, 'Active')
-
-    #cur.execute("SELECT * FROM recipe_info WHERE num = %s, dbscan_label = %s;", [selected_index,cur_flavor])
+    cur.execute("SELECT name FROM recipe_info WHERE dbscan_label = %s;", [cur_flavor])
+    entries = cur.fetchall()
+    # entries = constraint.nutritional_constraints(fetch_result, cur_age, cur_weight, cur_height, cur_gender, 'Active')
+    # print entries
     conn.close()
     error = None
-    return render_template('content.html', entries=entries, error=error)
+    return render_template('recipeRecommend.html', entries=entries, error=error)
 """
     try:
         conn = mysql.connect()

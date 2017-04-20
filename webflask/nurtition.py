@@ -15,7 +15,7 @@ def EER(age, weight, height, gender, activity_level):
             PA = 1.11
         elif activity_level == 'Active':
             PA = 1.25
-        elif activity_level == 'HighActive':
+        elif activity_level == 'LowActive':
             PA = 1.48
     elif gender == 'female':
         if activity_level == 'Sedentary':
@@ -24,7 +24,7 @@ def EER(age, weight, height, gender, activity_level):
             PA = 1.12
         elif activity_level == 'Active':
             PA = 1.27
-        elif activity_level == 'HighActive':
+        elif activity_level == 'LowActive':
             PA = 1.45
     else:
         print ('error')
@@ -128,7 +128,7 @@ def nutrition(age, weight, height, gender, activity_level):
                          'Vitamin B12, mcg': '2.4', 'Choline, mg': '550', 'Vitamin K, mcg': '120', 'Folate, mcg DFE': '400'}
         elif real_age > 50:
              Macronutrients = {'Protein,g': '56', 'Protein,kcal': '22.5', 'Carbonhydrate,g': '130', 'Carbonhydrate,kcal': '55',
-                               'DietaryFiber,g': '28', 'AddedSugars,kcal': '<10%', 'TotalFat,kcal': '27',
+                               'DietaryFiber,g': '28', 'AddedSugars,kcal': '<10%', 'TotalFat,kcal': '20-35',
                                'SaturatedFat,kcal': '<10%', 'LinoleicAcid,g': '14', 'LinolenicAcid,g': '1.6'}
              Minerals = {'Calcium,mg': '1000', 'Iron,mg': '8', 'Magnesium,mg': '420', 'Phosphorus,mg': '700', 'Potassium,mg': '4700',
                          'Sodium,mg': '2300', 'Zinc,mg': '11', 'Copper,mcg': '900', 'Manganese,mg': '2.3', 'Selenium,mcg': '55'}
@@ -213,9 +213,9 @@ def nutrition(age, weight, height, gender, activity_level):
         else:
              print ('error')
 
-    nutrition_list = [aaEER, Macronutrients['Protein,g'],
-                      Macronutrients['Carbonhydrate,g'],Macronutrients['DietaryFiber,g'],
-                      Macronutrients['TotalFat,kcal'], Minerals['Calcium,mg'],
+    nutrition_list = [aaEER, Macronutrients['Protein,g'],  
+                      Macronutrients['Carbonhydrate,g'],Macronutrients['DietaryFiber,g'], 
+                      Macronutrients['TotalFat,kcal'], Minerals['Calcium,mg'], 
                       Minerals['Iron,mg'], Minerals['Magnesium,mg'],
                       Minerals['Phosphorus,mg'], Minerals['Potassium,mg'], Minerals['Sodium,mg'], Minerals['Zinc,mg'],
                       Minerals['Manganese,mg'], Minerals['Selenium,mcg'], Vitamins['Vitamin A, mg RAE'], Vitamins['Vitamin E,mg AT'],

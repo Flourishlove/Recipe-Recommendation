@@ -20,6 +20,7 @@
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Pacifico" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/recipe21.css') }}">
@@ -32,15 +33,9 @@
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
 
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    </script>
 </head>
 
-<body>
+<body style="margin: 0px; padding: 0px;">
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -62,25 +57,17 @@
       </div>
     </nav>
 
-    <div class="bgimg w3-display-container w3-text-white">
+    <div class="container" style="width: 100%; padding-left: 0px; padding-right:0px; margin-left: 0px;">
       <div class="w3-display-middle w3-jumbo">
-        <p>Health Ninja</p>
-      </div>
-
-      <div class="w3-display-topleft w3-container w3-xlarge">
-          <p><button onclick="document.getElementById('Choose Flavor').style.display='block'" class="w3-button w3-black">Choose Flavor</button></p>
-
+        <p style="font-family: 'Pacifico', cursive; font-size:96px;">Health Ninja</p>
       </div>
 
       <div class="w3-display-bottomleft w3-container">
-        <p class="w3-xlarge">monday - friday 10-23 | saturday 14-02</p>
-        <p class="w3-large">Georgia Tech, Atlanta</p>
-        <p>powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+        <p class="w3-xlarge">Georgia Tech, Atlanta</p>
       </div>
-      <div class="section center">
-            <div class="section_title" style="text-indent: 100px; font-weight: bold; color: white;">
-                <p>Choose your favorite flavor</p>
-            </div>
+
+      <div class="section">
+            <h1 style="text-indent: 30px; font-weight: bold; color: white; font-family: 'Playfair Display', serif; font-size: 18px;">Choose your favorite flavor</h1>
             <form action="{{ url_for('choose_flavor') }}" method="post">
                 <div class="cc-selector">
                   <div class="input-group">
@@ -127,10 +114,7 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="section_title div-center" style="text-indent: 100px; font-weight: bold; color: white;">
-                <p >Fill in Your Personal Info</p>
-                </div>
+                <h1 style="text-indent: 30px; font-weight: bold; color: white; font-family: 'Playfair Display', serif; font-size: 18px;">Fill in Your Personal Info</h1>
                 <p>
                 <div class="input-group">
                   <span class="input-group-addon" id="basic-addon1">@</span>
@@ -151,17 +135,27 @@
                 </p>
 
                 <div class="input-group">
+                    <label for="gender" style="color: white;">Gender: </label>
                   <select class="form-control " name="gender">
                     <option>male</option>
                     <option>female</option>
                   </select>
                 </div>
-
+                <div class="input-group">
+                    <label for="activityLevel" style="color: white;">Amount of exercise: </label>
+                      <select class="form-control " name="activityLevel">
+                        <option>Sedentary</option>
+                        <option>Low Active</option>
+                        <option>Active</option>
+                        <option>HighActive</option>
+                      </select>
+                </div>
                 <p><div class="div-center"><input class="btn btn-primary" type="submit" name="action" value="Get Recommendation" /></div></p>
             </form>
           <div class="ninegrids_bottom"></div>
         </div>
     </div>
+
 
 <!-- Fill in Personal Information Modal -->
 <div id="Fill in Personal Information" class="w3-modal">
