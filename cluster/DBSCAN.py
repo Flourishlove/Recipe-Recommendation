@@ -14,7 +14,7 @@ with open('training_data.csv', 'rb') as f:
 
 train = np.array(train)
 
-model = DBSCAN(eps=0.07, min_samples=50, metric="hamming").fit(train)
+model = DBSCAN(eps=0.066, min_samples=50, metric="hamming").fit(train)
 
 print model.labels_
 
