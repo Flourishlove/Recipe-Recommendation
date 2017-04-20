@@ -1,11 +1,35 @@
-body,h1,h5 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-    background-image: url('/static/img/background.jpg');
-    min-height: 100%;
-    background-size:100%;
-    background-position: center center fixed;
+body,h1,h5 {font-family: "Playfair Display", sans-serif}
+h5 {
+    width: 26%;
+    word-wrap:break-word;
+    word-break:break-all;
+    overflow: hidden;
+    padding: 0px;
+}
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+body {
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+    background-image: url("../img/background2.jpg");
     background-size: cover;
+    background-position: 100% 100% fixed;
+    min-height: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.word {
+    width: 26%;
+    word-wrap:break-word;
+    word-break:break-all;
+    overflow: hidden;
+    padding: 0px;
 }
 
 .header {
@@ -14,16 +38,28 @@ body, html {height: 100%}
     padding:100px;
     }
 
+
 .div-center {
   width: 50%;
   margin: 0 auto;
 }
 
 .section {
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-left: 0px;
     position: relative;
     width:400px;
-    height:650px;
+    min-height: 100%;
+    float:right;
+    background-color:rgba(0, 0, 0, 0.5);
+    padding:30px;
+}
+
+.section_second {
+    margin-top: 200px;
+    position: center center;
+    width:400px;
+    min-height: 100%;
     float:right;
     background-color:rgba(0, 0, 0, 0.5);
     padding:30px;

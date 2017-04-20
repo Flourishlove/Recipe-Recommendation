@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Recipe Recommendation System</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/ie10-viewport-bug-workaround.css') }}">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Pacifico" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/recipe21.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/image_click9.css') }}">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="{{ url_for('static', filename='js/ie-emulation-modes-warning.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+</head>
+
+<body style="margin: 0px; padding: 0px;">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Health Ninja</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <!--<li><a onclick="document.getElementById('Fill in Personal Information').style.display='block'" class="w3-button">Fill in Personal Information</a></li>-->
+            <li><a onclick="document.getElementById('contact').style.display='block'" class="w3-button">contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+  <div class="w3-display-middle w3-jumbo">
+    <p style="font-family: 'Pacifico', cursive; font-size=96px;">Health Ninja</p>
+  </div>
+
+    <div class="container" style="width: 100%; padding-left: 0px; padding-right:0px; margin-left: 100px;">
+        <div class="w3-display-left w3-jumbo" style="background-color: rgba(255, 255, 255, 0.4); margin-top:0px; height=100%; margin-left:0px;">
+            <div class="w3-main w3-content w3-padding" style="min-width:50%; padding=20px; overflow-y: scroll; height: 650px;">
+                <!-- First Photo Grid-->
+                <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+                <div class="w3-third">
+                    <img  id="image1", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image1" style="width:100%">
+                </div>
+                <div class="w3-third">
+                 <img  id="image2", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image2" style="width:100%">
+                </div>
+                <div class="w3-third">
+                 <img  id="image3", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image3" style="width:100%">
+                </div>
+                </div>
+                <!-- Second Photo Grid-->
+                <div class="w3-row-padding w3-padding-16 w3-center">
+                <div class="w3-third">
+                 <img  id="image4", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image4" style="width:100%">
+                </div>
+                <div class="w3-third">
+                 <img  id="image5", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image5" style="width:100%">
+                </div>
+                <div class="w3-third">
+                 <img  id="image6", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image6" style="width:100%">
+                </div>
+                </div>
+                <!-- Third Photo Grid-->
+                <div class="w3-row-padding w3-padding-16 w3-center">
+                <div class="w3-third">
+                 <img  id="image7", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image7" style="width:100%">
+                </div>
+                <div class="w3-third">
+                 <img  id="image8", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image8" style="width:100%">
+                </div>
+                <div class="w3-third">
+                 <img  id="image9", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image9" style="width:100%">
+                </div>
+                </div>
+                <!-- Fourth Photo Grid-->
+                <div class="w3-row-padding w3-padding-16 w3-center">
+                <div class="w3-third">
+                 <img  id="image10", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image10" style="width:100%">
+                </div>
+                <div class="w3-third">
+                 <img  id="image11", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image11" style="width:100%">
+                </div>
+                <div class="w3-third">
+                 <img  id="image12", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image12" style="width:100%">
+                </div>
+                </div>
+                                <!-- Fourth Photo Grid-->
+                <div class="w3-row-padding w3-padding-16 w3-center">
+                <div class="w3-third">
+                 <img  id="image10", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image10" style="width:100%">
+                </div>
+                <div class="w3-third">
+                 <img  id="image11", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image11" style="width:100%">
+                </div>
+                <div class="w3-third">
+                 <img  id="image12", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image12" style="width:100%">
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-display-left w3-jumbo" style="background-color: rgba(255, 255, 255, 0.5); margin-top:0px; height:100%; width:26%; margin-left:70%;">
+            <div  class="w3-main w3-display-content w3-padding" style="max-width:26%; padding=20px; height: 650px; font-size:18px; margin-top:100px;">
+                <div class="w3-middle container">
+                    <h1 style="font-family: 'Pacifico', cursive; font-size=96px; margin-left:20px; font-size:50px;">Recipe Report: </h1>
+                    <div id="report" class="w3-middle container" style="display:none; overflow-y: scroll; overflow-x: hidden; height: 500px;">
+                        <h5> fhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlrdtfygubjklkm;,kmljhjgfdsawesrdtgfhjkllklmjhbgftdrseaesrdfghjkl
+                            jhgftreswrtyuiklkkjhujgyftdrsedfghjkhgfdsdfghjkmjhbgvfcdxsdfghjklmjnhgftdrertyghjkljihugytrfyghujkk;l;kljkhgtfrdfghjksxdcfgvhbjnkml,lmkbhgfcdxsfgvhbjnkm,l</h5>
+                        <h5> fhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlrdtfygubjklkm;,kmljhjgfdsawesrdtgfhjkllklmjhbgftdrseaesrdfghjkl
+                            jhgftreswrtyuiklkkjhujgyftdrsedfghjkhgfdsdfghjkmjhbgvfcdxsdfghjklmjnhgftdrertyghjkljihugytrfyghujkk;l;kljkhgtfrdfghjksxdcfgvhbjnkml,lmkbhgfcdxsfgvhbjnkm,l</h5>
+                        <h5> fhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlrdtfygubjklkm;,kmljhjgfdsawesrdtgfhjkllklmjhbgftdrseaesrdfghjkl
+                            jhgftreswrtyuiklkkjhujgyftdrsedfghjkhgfdsdfghjkmjhbgvfcdxsdfghjklmjnhgftdrertyghjkljihugytrfyghujkk;l;kljkhgtfrdfghjksxdcfgvhbjnkml,lmkbhgfcdxsfgvhbjnkm,l</h5><h5> fhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlrdtfygubjklkm;,kmljhjgfdsawesrdtgfhjkllklmjhbgftdrseaesrdfghjkl
+                            jhgftreswrtyuiklkkjhujgyftdrsedfghjkhgfdsdfghjkmjhbgvfcdxsdfghjklmjnhgftdrertyghjkljihugytrfyghujkk;l;kljkhgtfrdfghjksxdcfgvhbjnkml,lmkbhgfcdxsfgvhbjnkm,l</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <!--<div id="text1" class="w3-modal">-->
+          <!--<div class="w3-modal-content w3-animate-zoom">-->
+            <!--<div class="w3-container w3=grey" style="overflow:scroll; opacity: 0.3;">-->
+             <!--<span onclick="document.getElementById('text1').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>-->
+              <!--<h3>text1</h3>-->
+              <!--<p>text1</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div id="text2" class="w3-modal">-->
+          <!--<div class="w3-modal-content w3-animate-zoom">-->
+            <!--<div class="w3-container w3=grey" style="overflow:scroll; opacity: 0.3;">-->
+             <!--<span onclick="document.getElementById('text2').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>-->
+              <!--<h3>text2</h3>-->
+              <!--<p>text2</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div id="text3" class="w3-modal">-->
+          <!--<div class="w3-modal-content w3-animate-zoom">-->
+            <!--<div class="w3-container w3=grey" style="overflow:scroll; opacity: 0.3;">-->
+             <!--<span onclick="document.getElementById('text3').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>-->
+              <!--<h3>text3</h3>-->
+              <!--<p>text3</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div id="text4" class="w3-modal">-->
+          <!--<div class="w3-modal-content w3-animate-zoom">-->
+            <!--<div class="w3-container w3=grey" style="overflow:scroll; opacity: 0.3;">-->
+             <!--<span onclick="document.getElementById('text4').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>-->
+              <!--<h3>text4</h3>-->
+              <!--<p>text4</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div id="text5" class="w3-modal">-->
+          <!--<div class="w3-modal-content w3-animate-zoom">-->
+            <!--<div class="w3-container w3=grey" style="overflow:scroll; opacity: 0.3;">-->
+             <!--<span onclick="document.getElementById('text5').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>-->
+              <!--<h3>text5</h3>-->
+              <!--<p>text5</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div id="text6" class="w3-modal">-->
+          <!--<div class="w3-modal-content w3-animate-zoom">-->
+            <!--<div class="w3-container w3=grey" style="overflow:scroll; opacity: 0.3;">-->
+             <!--<span onclick="document.getElementById('text6').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>-->
+              <!--<h3>text6</h3>-->
+              <!--<p>text6</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div id="text7" class="w3-modal">-->
+          <!--<div class="w3-modal-content w3-animate-zoom">-->
+            <!--<div class="w3-container w3=grey" style="overflow:scroll; opacity: 0.3;">-->
+             <!--<span onclick="document.getElementById('text7').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>-->
+              <!--<h3>text7</h3>-->
+              <!--<p>text7</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div id="text8" class="w3-modal">-->
+          <!--<div class="w3-modal-content w3-animate-zoom">-->
+            <!--<div class="w3-container w3=grey" style="overflow:scroll; opacity: 0.3;">-->
+             <!--<span onclick="document.getElementById('text8').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>-->
+              <!--<h3>text8</h3>-->
+              <!--<p>text8</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div id="text9" class="w3-modal">-->
+          <!--<div class="w3-modal-content w3-animate-zoom">-->
+            <!--<div class="w3-container w3=grey" style="overflow:scroll; opacity: 0.3;">-->
+             <!--<span onclick="document.getElementById('text9').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>-->
+              <!--<h3>text9</h3>-->
+              <!--<p>text9</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div id="text10" class="w3-modal">-->
+          <!--<div class="w3-modal-content w3-animate-zoom">-->
+            <!--<div class="w3-container w3=grey" style="overflow:scroll; opacity: 0.3;">-->
+             <!--<span onclick="document.getElementById('text10').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>-->
+              <!--<h3>text10</h3>-->
+              <!--<p>text10</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div id="text11" class="w3-modal">-->
+          <!--<div class="w3-modal-content w3-animate-zoom">-->
+            <!--<div class="w3-container w3=grey" style="overflow:scroll; opacity: 0.3;">-->
+             <!--<span onclick="document.getElementById('text11').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>-->
+              <!--<h3>text11</h3>-->
+              <!--<p>text11</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div id="text12" class="w3-modal">-->
+          <!--<div class="w3-modal-content w3-animate-zoom">-->
+            <!--<div class="w3-container w3=grey" style="overflow:scroll; opacity: 0.3;">-->
+             <!--<span onclick="document.getElementById('text12').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>-->
+              <!--<h3>text12</h3>-->
+              <!--<p>text12</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!-- Contact Modal -->
+<div id="contact" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black">
+      <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-black">x</span>
+      <!-- <h1>Contact</h1> -->
+    </div>
+    <div class="w3-container">
+      <p>Reserve a table, ask for today's special or just send us a message:</p>
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+        <p><button class="w3-button" type="submit">SEND MESSAGE</button></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+// Script to open and close sidebar
+$(function(){
+    $("#image1").click(function(){
+    document.getElementById("report").style.display='block';
+    });
+});
+
+$(function(){
+    $("#image2").click(function(){
+    document.getElementById("report").style.display='block';
+  });
+});
+
+$(function(){
+    $("#image3").click(function(){
+    document.getElementById("report").style.display='block';
+    });
+});
+
+$(function(){
+    $("#image4").click(function(){
+    document.getElementById("report").style.display='block';
+    });
+});
+
+$(function(){
+    $("#image5").click(function(){
+    document.getElementById("report").style.display='block';
+    });
+});
+
+$(function(){
+    $("#image6").click(function(){
+    document.getElementById("report").style.display='block';
+    });
+});
+
+$(function(){
+    $("#image7").click(function(){
+    document.getElementById("report").style.display='block';
+    });
+});
+
+$(function(){
+    $("#image8").click(function(){
+    document.getElementById("report").style.display='block';
+    });
+});
+
+$(function(){
+    $("#image9").click(function(){
+    document.getElementById("report").style.display='block';
+    });
+});
+
+$(function(){
+    $("#image10").click(function(){
+    document.getElementById("report").style.display='block';
+    });
+});
+
+$(function(){
+    $("#image11").click(function(){
+    document.getElementById("report").style.display='block';
+    });
+});
+
+$(function(){
+    $("#image12").click(function(){
+    document.getElementById("report").style.display='block';
+    });
+});
+</script>
+
+</body>
+</html>
