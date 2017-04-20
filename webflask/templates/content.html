@@ -7,7 +7,7 @@
       <p>{{ error }}</p>
   {% else %}
       {% for entry in entries %}
-        <li>{{ entry[0] }} </li>
+            <li>{{ entry[0][0][0] }}, {{ entry[0][0][1] }}; {{ entry[1][0][0] }},{{ entry[1][0][1] }}; {{ entry[2][0][0] }},{{ entry[2][0][1] }};</li>
       {% endfor %}
   {% endif %}
 

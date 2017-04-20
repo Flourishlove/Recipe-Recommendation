@@ -16,7 +16,7 @@ html, body {
 body {
     background-attachment: fixed;
     background-repeat:no-repeat;
-    background-image: url("../img/background2.jpg");
+    background-image: url("/static/img/background2.jpg");
     background-size: cover;
     background-position: 100% 100% fixed;
     min-height: 100%;

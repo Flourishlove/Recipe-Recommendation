@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Pacifico" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/recipe21.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/recipe23.css') }}">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/image_click9.css') }}">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -133,23 +133,23 @@
                   <input type="text" class="form-control" placeholder="Age" aria-describedby="basic-addon1" name="age" required>
                 </div>
                 </p>
-
                 <div class="input-group">
-                    <label for="gender" style="color: white;">Gender: </label>
-                  <select class="form-control " name="gender">
+                    <label style="color: white;">Amount of exercise: </label>
+                      <select class="form-control " name="activity" required>
+                        <option>sedentary</option>
+                        <option>lowActive</option>
+                        <option>active</option>
+                        <option>highactive</option>
+                      </select>
+                </div>
+                <div class="input-group">
+                    <label style="color: white;">Gender: </label>
+                  <select class="form-control " name="gender" required>
                     <option>male</option>
                     <option>female</option>
                   </select>
                 </div>
-                <div class="input-group">
-                    <label for="activityLevel" style="color: white;">Amount of exercise: </label>
-                      <select class="form-control " name="activityLevel">
-                        <option>Sedentary</option>
-                        <option>Low Active</option>
-                        <option>Active</option>
-                        <option>HighActive</option>
-                      </select>
-                </div>
+
                 <p><div class="div-center"><input class="btn btn-primary" type="submit" name="action" value="Get Recommendation" /></div></p>
             </form>
           <div class="ninegrids_bottom"></div>

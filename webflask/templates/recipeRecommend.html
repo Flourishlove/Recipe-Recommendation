@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Pacifico" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/recipe21.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/recipe23.css') }}">
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/image_click9.css') }}">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -65,51 +65,54 @@
         <div class="w3-display-left w3-jumbo" style="background-color: rgba(255, 255, 255, 0.4); margin-top:0px; height=100%; margin-left:0px;">
             <div class="w3-main w3-content w3-padding" style="min-width:50%; padding=20px; overflow-y: scroll; height: 650px;">
                 <!-- First Photo Grid-->
+              {% if error is not none %}
+                  <p>{{ error }}</p>
+              {% else %}
                 <div class="w3-row-padding w3-padding-16 w3-center" id="food">
                 <div class="w3-third">
-                    <img  id="image1", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image1" style="width:100%">
+                    <img  id="image1", src="{{ entries[0][0][0][3] }}" alt="image1" style="width:100%">
                 </div>
                 <div class="w3-third">
-                 <img  id="image2", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image2" style="width:100%">
+                 <img  id="image2", src="{{ entries[0][1][0][3] }}" alt="image2" style="width:100%">
                 </div>
                 <div class="w3-third">
-                 <img  id="image3", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image3" style="width:100%">
+                 <img  id="image3", src="{{ entries[0][2][0][3] }}" alt="image3" style="width:100%">
                 </div>
                 </div>
                 <!-- Second Photo Grid-->
                 <div class="w3-row-padding w3-padding-16 w3-center">
                 <div class="w3-third">
-                 <img  id="image4", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image4" style="width:100%">
+                 <img  id="image4", src="{{ entries[1][0][0][3] }}" alt="image4" style="width:100%">
                 </div>
                 <div class="w3-third">
-                 <img  id="image5", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image5" style="width:100%">
+                 <img  id="image5", src="{{ entries[1][1][0][3] }}" alt="image5" style="width:100%">
                 </div>
                 <div class="w3-third">
-                 <img  id="image6", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image6" style="width:100%">
+                 <img  id="image6", src="{{ entries[1][2][0][3] }}" alt="image6" style="width:100%">
                 </div>
                 </div>
                 <!-- Third Photo Grid-->
                 <div class="w3-row-padding w3-padding-16 w3-center">
                 <div class="w3-third">
-                 <img  id="image7", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image7" style="width:100%">
+                 <img  id="image7", src="{{ entries[2][0][0][3] }}" alt="image7" style="width:100%">
                 </div>
                 <div class="w3-third">
-                 <img  id="image8", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image8" style="width:100%">
+                 <img  id="image8", src="{{ entries[2][1][0][3] }}" alt="image8" style="width:100%">
                 </div>
                 <div class="w3-third">
-                 <img  id="image9", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image9" style="width:100%">
+                 <img  id="image9", src="{{ entries[2][2][0][3] }}" alt="image9" style="width:100%">
                 </div>
                 </div>
                 <!-- Fourth Photo Grid-->
                 <div class="w3-row-padding w3-padding-16 w3-center">
                 <div class="w3-third">
-                 <img  id="image10", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image10" style="width:100%">
+                 <img  id="image10", src="{{ entries[3][0][0][3] }}" alt="image10" style="width:100%">
                 </div>
                 <div class="w3-third">
-                 <img  id="image11", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image11" style="width:100%">
+                 <img  id="image11", src="{{ entries[3][1][0][3] }}" alt="image11" style="width:100%">
                 </div>
                 <div class="w3-third">
-                 <img  id="image12", src="{{ url_for('static', filename='img/plane.jpg') }}" alt="image12" style="width:100%">
+                 <img  id="image12", src="{{ entries[3][2][0][3] }}" alt="image12" style="width:100%">
                 </div>
                 </div>
                                 <!-- Fourth Photo Grid-->
@@ -132,18 +135,16 @@
                 <div class="w3-middle container">
                     <h1 style="font-family: 'Pacifico', cursive; font-size=96px; margin-left:20px; font-size:50px;">Recipe Report: </h1>
                     <div id="report" class="w3-middle container" style="display:none; overflow-y: scroll; overflow-x: hidden; height: 500px;">
-                        <h5> fhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlrdtfygubjklkm;,kmljhjgfdsawesrdtgfhjkllklmjhbgftdrseaesrdfghjkl
-                            jhgftreswrtyuiklkkjhujgyftdrsedfghjkhgfdsdfghjkmjhbgvfcdxsdfghjklmjnhgftdrertyghjkljihugytrfyghujkk;l;kljkhgtfrdfghjksxdcfgvhbjnkml,lmkbhgfcdxsfgvhbjnkm,l</h5>
-                        <h5> fhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlrdtfygubjklkm;,kmljhjgfdsawesrdtgfhjkllklmjhbgftdrseaesrdfghjkl
-                            jhgftreswrtyuiklkkjhujgyftdrsedfghjkhgfdsdfghjkmjhbgvfcdxsdfghjklmjnhgftdrertyghjkljihugytrfyghujkk;l;kljkhgtfrdfghjksxdcfgvhbjnkml,lmkbhgfcdxsfgvhbjnkm,l</h5>
-                        <h5> fhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlrdtfygubjklkm;,kmljhjgfdsawesrdtgfhjkllklmjhbgftdrseaesrdfghjkl
-                            jhgftreswrtyuiklkkjhujgyftdrsedfghjkhgfdsdfghjkmjhbgvfcdxsdfghjklmjnhgftdrertyghjkljihugytrfyghujkk;l;kljkhgtfrdfghjksxdcfgvhbjnkml,lmkbhgfcdxsfgvhbjnkm,l</h5><h5> fhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlk;l;kljkhgtfrdfghjklhgjhkjlrdtfygubjklkm;,kmljhjgfdsawesrdtgfhjkllklmjhbgftdrseaesrdfghjkl
-                            jhgftreswrtyuiklkkjhujgyftdrsedfghjkhgfdsdfghjkmjhbgvfcdxsdfghjklmjnhgftdrertyghjkljihugytrfyghujkk;l;kljkhgtfrdfghjksxdcfgvhbjnkml,lmkbhgfcdxsfgvhbjnkm,l</h5>
+                        <p></p>
+                        <h5> Recipe Name:{{ entries[0][0][0][0] }}, Cuisine: {{ entries[0][0][0][1] }}, Provider: {{ entries[0][0][0][2] }}, Ingredient: {{ entries[0][0][0][4] }}</h5>
+                        <h5> Recipe Name:{{ entries[0][1][0][0] }}, Cuisine: {{ entries[0][1][0][1] }}, Provider: {{ entries[0][1][0][2] }}, Ingredient: {{ entries[0][1][0][4] }}</h5>
+                        <h5> Recipe Name:{{ entries[0][2][0][0] }}, Cuisine: {{ entries[0][2][0][1] }}, Provider: {{ entries[0][2][0][2] }}, Ingredient: {{ entries[0][2][0][4] }}</h5>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {% endif %}
 
 
         <!--<div id="text1" class="w3-modal">-->

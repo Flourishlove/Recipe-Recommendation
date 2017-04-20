@@ -5,6 +5,7 @@ from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash
 from flaskext.mysql import MySQL
 import constraint
+import ast
 
 from settings import APP_STATIC
 
@@ -29,11 +30,11 @@ mysql.init_app(application)
 @application.route('/show')
 def show_recipes():
     cur_flavor = request.args.get('flavor')
-    cur_height = request.args.get('height')
+    cur_height = float(request.args.get('height'))/100
     cur_weight = request.args.get('weight')
     cur_age = request.args.get('age')
     cur_gender = request.args.get('gender')
-    print cur_age
+    cur_activity = request.args.get('activityLevel')
     #cur.execute("SELECT name FROM recipes WHERE flavor = %s;", [cur_flavor])
     if cur_flavor == 8:
         flavor_name = "Slow Cooker Irish Beef Stew"
@@ -56,12 +57,27 @@ def show_recipes():
 
     conn = mysql.connect()
     cur = conn.cursor()
-    cur.execute("SELECT name FROM recipe_info WHERE dbscan_label = %s;", [cur_flavor])
-    entries = cur.fetchall()
-    # entries = constraint.nutritional_constraints(fetch_result, cur_age, cur_weight, cur_height, cur_gender, 'Active')
-    # print entries
-    conn.close()
+    cur.execute("SELECT num, nutrition FROM recipe_info WHERE dbscan_label = %s;", [cur_flavor])
+    fetch_result = cur.fetchall()
+    satisfied_recipes = constraint.nutritional_constraints(fetch_result, cur_age, cur_weight, cur_height, cur_gender, 'Active')
+    print satisfied_recipes
+    # provider, big_image
     error = None
+    entries = []
+    count = 0
+    for group in satisfied_recipes:
+        templist = []
+        for i in range(0,3):
+            cur.execute("SELECT name, cuisine, provider, big_image, ingredient_amount FROM recipe_info WHERE num = %s and dbscan_label = %s;", [group[i], cur_flavor])
+            temp = cur.fetchall()
+            print temp
+            templist.append(temp)
+        entries.append(templist)
+        count = count + 1
+        if count > 3:
+            break
+    conn.close()
+    #return render_template('content.html', entries=entries, error=error)
     return render_template('recipeRecommend.html', entries=entries, error=error)
 """
     try:
