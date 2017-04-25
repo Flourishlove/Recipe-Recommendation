@@ -19,7 +19,7 @@ INSTALLATION
 ##########################################################################
 In command prompt, enter “CODE” folder and install all necessary python libraries:
 $ cd CODE
-$ sudo pip install -r requirement.txt
+$ sudo pip install -r requirements.txt
 $ python application.py
 Then you will see something like * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit), Which means you run our demo successfully. Go to you browse and enter localhost:5000, you will see our webapplication.
 
@@ -28,7 +28,7 @@ $ sudo pip install virtualenv
 $ cd CODE
 $ virtualenv venv
 $ . venv/bin/activate  (For Windows user: $ venv\Scripts\activate)
-$ pip install -r requirement.txt
+$ pip install -r requirements.txt
 $ python application.py
 
 This option provides you with a virtual environment in folder venv. Whenever you want to run the demo, you can just use command $ . venv/bin/activate. After testing demo, use 
