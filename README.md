@@ -10,6 +10,11 @@ People always face same problem in their daily life: What to eat and how to eat 
 Estimated Energy Requirements Diagram
 
 ## Project Architecture
+![alt tag](https://raw.githubusercontent.com/Flourishlove/Recipe-Recommendation/master/Architecture.png) <br />
+1. Combine two original dataset into one big recipe-compound matrix. 
+2. With recipe-compound data on hand, we use two machine learning algorithms, hierarchical clustering and DBSCAN, to cluster flavor of recipes based on their compound. In final implementation, we use DBSCAN because it discard those isolated recipes and make recipe distribution better.
+3. Use information of user’s body condition to further filter out the recipes to recommend.
+
 
 ## Installation
 ### 1. Running locally
@@ -43,8 +48,9 @@ $ deactivate
 ```
 to exist virtual environment.
 
-
-
+## Dependencies
+Flask <br />
+scikit-learn <br />
 
 ## Solutions to some problems
 [Create and Connect to a MySQL Database with Amazon RDS](https://aws.amazon.com/getting-started/tutorials/create-mysql-db/) <br />
