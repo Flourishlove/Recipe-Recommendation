@@ -13,9 +13,9 @@ Estimated Energy Requirements Diagram
 
 ## Installation
 ### 1. Running locally
-In command prompt, enter “webflask” folder and install all necessary python libraries:
+In command prompt, enter code folder and install all necessary python libraries:
 ```
-$ cd webflask
+$ cd code
 $ sudo pip install -r requirements.txt
 $ python application.py
 ```
@@ -31,15 +31,15 @@ Which means you run our demo successfully. Go to you browse and enter [localhost
 If you don’t want to install all the libraries and packages in your system, you can use virtualenv to setup virtual environment:
 ```
 $ sudo pip install virtualenv
-$ cd webflask
+$ cd code
 $ virtualenv venv
 $ . venv/bin/activate  (For Windows user: $ venv\Scripts\activate)
 $ pip install -r requirements.txt
 $ python application.py
 ```
-This option provides you with a virtual environment in folder venv. Whenever you want to run the demo, you can just use command $ . venv/bin/activate. After testing demo, use 
+This option provides you with a virtual environment in folder venv. Whenever you want to run the demo, you can just use command $ . venv/bin/activate. After testing demo, use
 ```
-$ deactivate 
+$ deactivate
 ```
 to exist virtual environment.
 
