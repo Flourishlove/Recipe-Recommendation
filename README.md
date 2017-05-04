@@ -48,6 +48,14 @@ $ deactivate
 ```
 to exist virtual environment.
 
+## Interface 
+There are two pages of our webapp. <br />
+Choose flavor and enter body condition in the first page.
+![alt tag](https://raw.githubusercontent.com/Flourishlove/Recipe-Recommendation/master/page1.png) <br />
+
+Display recommendation on the second page.
+![alt tag](https://raw.githubusercontent.com/Flourishlove/Recipe-Recommendation/master/page2.png) <br />
+
 ## Dependencies
 Flask <br />
 scikit-learn <br />
